@@ -14,10 +14,19 @@ function User() {
     .then(data => {
       document.getElementById("output").textContent =
         `City: ${data.name}
-Temperature: ${data.main.temp} °C
-Weather: ${data.weather[0].description}`;
+        Temperature: ${data.main.temp} °C
+        Weather: ${data.weather[0].description}`;
     })
     .catch(err => {
       document.getElementById("output").textContent = err.message;
     });
+    fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    const iconCode = data.weather[1].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    document.getElementById("weather-icon").src = iconUrl;
+    document.getElementById("weather-icon").style.display = "block";
+  });
+
 }

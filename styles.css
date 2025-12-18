@@ -1,11 +1,29 @@
 body {
-    background-color: linen;
+  background-color: linen;
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
     color: maroon;
     margin-left: 40px;
 }
+.top {
+  height: 25vh;              
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  background-color: #e3f2fd; 
+}
+
+
+#weather-icon {
+  width: 100px;
+  height: 100px;
+  display: none;
+}
+
 .center-container {
   display: flex;
   justify-content: center; 
