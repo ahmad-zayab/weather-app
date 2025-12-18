@@ -23,10 +23,9 @@ function User() {
     fetch(url)
   .then(res => res.json())
   .then(data => {
-    const iconCode = data.weather[1].icon;
+    const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
     document.getElementById("weather-icon").src = iconUrl;
     document.getElementById("weather-icon").style.display = "block";
   });
-
 }
